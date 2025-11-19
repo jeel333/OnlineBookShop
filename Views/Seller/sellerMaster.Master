@@ -1,0 +1,153 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="sellerMaster.master.cs" Inherits="OnlineBookShop.Views.Seller.sellerMaster" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+        <title>Admin Dashboard - Online Book Shop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../../Assets/Lib/css/bootstrap.min.css" rel="stylesheet" />
+
+    <style>
+        * {
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background-color: #f7f9fb;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Sidebar */
+        #sidebar {
+            height: 100vh;
+            background-color: #006d77;
+            color: #fff;
+            padding-top: 30px;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 230px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.15);
+        }
+
+        #sidebar img#Logo {
+            width: 70px;
+            height: 70px;
+            margin-bottom: 15px;
+        }
+
+        #sidebar h4 {
+            color: white;
+            font-weight: 600;
+            margin-bottom: 40px;
+        }
+
+        .nav-item {
+            width: 100%;
+            padding: 12px 25px;
+            display: flex;
+            align-items: center;
+            color: #e0f7fa;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+            font-size: 16px;
+        }
+
+        .nav-item img {
+            width: 35px;
+            height: 35px;
+            margin-right: 15px;
+        }
+
+        .nav-item:hover {
+            background-color: #005f68;
+            color: #fff;
+        }
+
+        .nav-item.active {
+            background-color: #004c54;
+            color: #fff;
+            font-weight: bold;
+        }
+
+       
+        #main-content {
+            margin-left: 230px;
+            padding: 25px;
+        }
+
+       
+        @media (max-width: 768px) {
+            #sidebar {
+                position: relative;
+                height: auto;
+                width: 100%;
+                flex-direction: row;
+                justify-content: space-around;
+                box-shadow: none;
+            }
+            #main-content {
+                margin-left: 0;
+                padding: 15px;
+            }
+            .nav-item {
+                flex-direction: column;
+                font-size: 16px;
+                padding: 10px;
+            }
+        }
+    </style>
+
+    <asp:ContentPlaceHolder ID="head" runat="server" />
+</head>
+
+<body>
+    <form id="form1" runat="server">
+        <div class="container-fluid">
+           
+            <div id="sidebar">
+                <img src="../../Assets/Images/shopping-cart-64.png" id="Logo" alt="Logo" />
+                <h4>BookShop</h4>
+
+                <a href="#" class="nav-item">
+                    <img src="../../Assets/Images/book-100.png" alt="Books" />
+                    Billing
+                </a>
+
+                <a href="#" class="nav-item">
+                    <img src="../../Assets/Images/user-typing-using-typewriter-64.png" alt="Authors" />
+                    Authors
+                </a>
+
+                <a href="#" class="nav-item">
+                    <img src="../../Assets/Images/administrator-male-52.png" alt="Sellers" />
+                    Sellers
+                </a>
+
+                <a href="#" class="nav-item">
+                    <img src="../../Assets/Images/categorize-60.png" alt="Categories" />
+                    Categories
+                </a>
+                <div style="height:200px">
+
+                </div>
+                <a href="../Login.aspx" class="nav-item">
+                    <img src="../../Assets/Images/home-52.png" alt="Logout" />
+                    Logout
+                </a>
+            </div>
+
+            
+            <div id="main-content">
+                <asp:ContentPlaceHolder ID="MyContent" runat="server" />
+               
+            </div>
+        </div>
+    </form>
+</body>
+</html>
